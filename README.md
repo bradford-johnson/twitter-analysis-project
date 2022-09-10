@@ -20,7 +20,7 @@
 > **I. The data I want to collect**
 > > A. I want to collect Tweets for a number of topics, each topic being a 'mini project' where I find insights for each, and can look at them all retrospectively to evaluate my methods  
 > > 
-> > Topics:
+> > **Topics:**
 > > > 1. **Rocket League** - Video Game
 > > > See below video for a trailer of the game, or click [here](https://www.rocketleague.com/) to visit the Rocket League website  
 > > > Recently a new update was released, so I want to investigate what players are saying about the game in general or the update
