@@ -17,8 +17,9 @@
 
 ## Data 
 
-> **I. The data I want to collect**
-> > A. I want to collect Tweets for a number of topics, each topic being a 'mini project' where I find insights for each, and can look at them all retrospectively to evaluate my methods  
+> **The data I want to collect**
+> ---
+> > I want to collect Tweets for a number of topics, each topic being a 'mini project' where I find insights for each, and can look at them all retrospectively to evaluate my methods  
 > > 
 > > **Topics:**
 > > ---
