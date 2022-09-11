@@ -18,7 +18,7 @@ auth_has_default()
 
 Search tweets 1000 per execution
 
-```{r}
+```{r eval=FALSE}
 df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
 ```
 
@@ -26,7 +26,7 @@ df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
 
 Select and divide columns
 
-```{r}
+```{r eval=FALSE}
 df1 <- df %>%
   select(id_str, retweet_count, favorite_count,  created_at)
 
@@ -36,7 +36,7 @@ df2 <- df %>%
 
 Export as `.csv`
 
-```{r}
+```{r eval=FALSE}
 write_csv(df1, "tweet_data.csv", col_names = FALSE)
 write_csv(df2, "tweet_text.csv", col_names = FALSE)
 ```
