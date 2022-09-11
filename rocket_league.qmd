@@ -4,14 +4,14 @@
 
 Load libraries
 
-```{r}
+```{r warning=FALSE, message=FALSE}
 library(tidyverse)
 library(rtweet)
 ```
 
 Authenticate Twitter account
 
-```{r}
+```{r warning=FALSE, message=FALSE}
 auth_setup_default()
 auth_has_default()
 ```
