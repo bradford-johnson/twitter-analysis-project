@@ -40,3 +40,5 @@ Export as `.csv`
 write_csv(df1, "tweet_data.csv", col_names = FALSE)
 write_csv(df2, "tweet_text.csv", col_names = FALSE)
 ```
+
+Data all put into `postgreSQL` database
