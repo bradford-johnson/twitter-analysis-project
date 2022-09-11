@@ -16,8 +16,27 @@ auth_setup_default()
 auth_has_default()
 ```
 
-Search tweets
+Search tweets 1000 per execution
 
 ```{r}
-rt <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
+df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
+```
+
+## Divide and Export Tweets Data
+
+Select and divide columns
+
+```{r}
+df1 <- df %>%
+  select(id_str, retweet_count, favorite_count,  created_at)
+
+df2 <- df %>%
+  select(id_str, full_text, display_text_range, text)
+```
+
+Export as `.csv`
+
+```{r}
+write_csv(df1, "tweet_data.csv", col_names = FALSE)
+write_csv(df2, "tweet_text.csv", col_names = FALSE)
 ```
