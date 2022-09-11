@@ -1,1 +1,23 @@
-# Rocket League Analysis
+# **Rocket League Twitter Analysis**
+
+## Tweet Scrape
+
+Load libraries
+
+```{r}
+library(tidyverse)
+library(rtweet)
+```
+
+Authenticate Twitter account
+
+```{r}
+auth_setup_default()
+auth_has_default()
+```
+
+Search tweets
+
+```{r}
+rt <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
+```
