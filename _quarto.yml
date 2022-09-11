@@ -8,6 +8,7 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - rocket_league.qmd
       - about.qmd
 
 format:
