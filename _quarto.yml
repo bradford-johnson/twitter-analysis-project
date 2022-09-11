@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "twitter-analysis"
+  title: "Twitter Analysis Project"
   navbar:
     left:
       - href: index.qmd
