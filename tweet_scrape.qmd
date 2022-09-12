@@ -22,7 +22,7 @@ Finally I will then search and scrape tweets that contain 'rocket league', I am 
 df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
 ```
 
-### Divide Tweets 
+### Divide Tweets
 
 Now I will clean up the dataset into two more manageable tables that will be imported into my `postgreSQL` database.
 
