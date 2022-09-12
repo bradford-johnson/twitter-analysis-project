@@ -1,9 +1,10 @@
 ---
 title: "Connecting to the Database"
 ---
+
 ## Connect to Database for Queries
 
-Load packages
+First I loaded the `DBI`, `RPostgres`, and `dplyr` packages which will allow me to connect to the database and query it.
 
 ```{r warning=FALSE, message=FALSE}
 library(DBI)
@@ -11,7 +12,7 @@ library(RPostgres)
 library(dplyr)
 ```
 
-Database information
+Next I will set the parameters to connect to my local database.
 
 ```{r}
 # establish connection with postgres data base
@@ -23,7 +24,7 @@ con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
 
 ```
 
-Make query
+Once connected I can construct a query.
 
 ```{r}
 res <- dbSendQuery(con, "
@@ -35,14 +36,14 @@ res <- dbSendQuery(con, "
 
 ```
 
-Execute query
+And the execute the query.
 
 ```{r}
 # execute query
 df <- dbFetch(res)
 ```
 
-Clear query and disconnect from database
+After I am done with using the database I will clear out the query and disconnect from the database in order so save resources.
 
 ```{r}
 # clear query
