@@ -161,7 +161,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <ul>
   <li><a href="#tweet-scrape" id="toc-tweet-scrape" class="nav-link active" data-scroll-target="#tweet-scrape"><strong>Tweet Scrape</strong></a>
   <ul class="collapse">
+  <li><a href="#rocket-league-tweets" id="toc-rocket-league-tweets" class="nav-link" data-scroll-target="#rocket-league-tweets">Rocket League Tweets</a>
+  <ul class="collapse">
+  <li><a href="#divide-tweets-data" id="toc-divide-tweets-data" class="nav-link" data-scroll-target="#divide-tweets-data">Divide Tweets Data</a></li>
+  <li><a href="#export-data" id="toc-export-data" class="nav-link" data-scroll-target="#export-data">Export Data</a></li>
+  </ul></li>
+  <li><a href="#pokémon-go-tweets" id="toc-pokémon-go-tweets" class="nav-link" data-scroll-target="#pokémon-go-tweets">Pokémon Go Tweets</a>
+  <ul class="collapse">
   <li><a href="#divide-and-export-tweets-data" id="toc-divide-and-export-tweets-data" class="nav-link" data-scroll-target="#divide-and-export-tweets-data">Divide and Export Tweets Data</a></li>
+  <li><a href="#export-data-1" id="toc-export-data-1" class="nav-link" data-scroll-target="#export-data-1">Export Data</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -186,12 +195,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>[1] TRUE</code></pre>
 </div>
 </div>
+<section id="rocket-league-tweets" class="level2">
+<h2 class="anchored" data-anchor-id="rocket-league-tweets">Rocket League Tweets</h2>
 <p>Finally I will then search and scrape tweets that contain ‘rocket league’, I am doing 1000 Tweets at a time, that do not include Retweets and are in English.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">search_tweets</span>(<span class="st">"rocket league"</span>, <span class="at">n =</span> <span class="dv">1000</span>, <span class="at">include_rts =</span> <span class="cn">FALSE</span>, <span class="at">lang =</span> <span class="st">"en"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="divide-and-export-tweets-data" class="level2">
-<h2 class="anchored" data-anchor-id="divide-and-export-tweets-data">Divide and Export Tweets Data</h2>
+<section id="divide-tweets-data" class="level3">
+<h3 class="anchored" data-anchor-id="divide-tweets-data">Divide Tweets Data</h3>
 <p>Now I will clean up the dataset into two more manageable tables that will be imported in into my <code>postgreSQL</code> database.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
@@ -200,13 +211,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id_str, full_text, display_text_range, text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>After creating the two tables, I will export them in <code>.csv</code> format. I will then get on pgadmin4 and import the <code>.csv</code> into the database.</p>
+</section>
+<section id="export-data" class="level3">
+<h3 class="anchored" data-anchor-id="export-data">Export Data</h3>
+<p>After creating the two tables, I will export them in <code>.csv</code> format. I will then get on pgadmin4 and import the <code>.csv</code>’s into the database.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(df1, <span class="st">"tweet_data.csv"</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(df2, <span class="st">"tweet_text.csv"</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+</section>
+<section id="pokémon-go-tweets" class="level2">
+<h2 class="anchored" data-anchor-id="pokémon-go-tweets">Pokémon Go Tweets</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pdf <span class="ot">&lt;-</span> <span class="fu">search_tweets</span>(<span class="st">"pokemon go"</span>, <span class="at">n =</span> <span class="dv">1000</span>, <span class="at">include_rts =</span> <span class="cn">FALSE</span>, <span class="at">lang =</span> <span class="st">"en"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="divide-and-export-tweets-data" class="level3">
+<h3 class="anchored" data-anchor-id="divide-and-export-tweets-data">Divide and Export Tweets Data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pdf1 <span class="ot">&lt;-</span> pdf <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id_str, retweet_count, favorite_count,  created_at)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>pdf2 <span class="ot">&lt;-</span> pdf <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id_str, full_text, display_text_range, text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="export-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="export-data-1">Export Data</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(df1, <span class="st">"tweet_data.csv"</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(df2, <span class="st">"tweet_text.csv"</span>, <span class="at">col_names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 </section>
 </section>
 

@@ -14,13 +14,15 @@ auth_setup_default()
 auth_has_default()
 ```
 
+## Rocket League Tweets
+
 Finally I will then search and scrape tweets that contain 'rocket league', I am doing 1000 Tweets at a time, that do not include Retweets and are in English.
 
 ```{r eval=FALSE}
 df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
 ```
 
-## Divide and Export Tweets Data
+### Divide Tweets Data
 
 Now I will clean up the dataset into two more manageable tables that will be imported in into my `postgreSQL` database.
 
@@ -32,7 +34,32 @@ df2 <- df %>%
   select(id_str, full_text, display_text_range, text)
 ```
 
+### Export Data
+
 After creating the two tables, I will export them in `.csv` format. I will then get on pgadmin4 and import the `.csv`'s into the database.
+
+```{r eval=FALSE}
+write_csv(df1, "tweet_data.csv", col_names = FALSE)
+write_csv(df2, "tweet_text.csv", col_names = FALSE)
+```
+
+## Pokémon Go Tweets
+
+```{r eval=FALSE}
+pdf <- search_tweets("pokemon go", n = 1000, include_rts = FALSE, lang = "en")
+```
+
+### Divide and Export Tweets Data
+
+```{r eval=FALSE}
+pdf1 <- pdf %>%
+  select(id_str, retweet_count, favorite_count,  created_at)
+
+pdf2 <- pdf %>%
+  select(id_str, full_text, display_text_range, text)
+```
+
+### Export Data
 
 ```{r eval=FALSE}
 write_csv(df1, "tweet_data.csv", col_names = FALSE)
