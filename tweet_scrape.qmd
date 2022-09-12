@@ -62,6 +62,6 @@ pdf2 <- pdf %>%
 ### Export Data
 
 ```{r eval=FALSE}
-write_csv(df1, "tweet_data.csv", col_names = FALSE)
-write_csv(df2, "tweet_text.csv", col_names = FALSE)
+write_csv(pdf1, "pogo_tweet_data.csv", col_names = FALSE)
+write_csv(pdf2, "pogo_tweet_text.csv", col_names = FALSE)
 ```
