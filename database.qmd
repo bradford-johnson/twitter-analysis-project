@@ -25,9 +25,7 @@ Once connected I can construct a query.
 ```{r}
 res <- dbSendQuery(con, "
                    SELECT *
-                   FROM tweetdata AS t1
-                   LEFT JOIN tweettext AS t2
-                   ON t1.id_str = t2.id_str
+                   FROM pogodata
                    LIMIT 100;")
 
 ```

@@ -34,13 +34,26 @@ df2 <- df %>%
   select(id_str, full_text, display_text_range, text)
 ```
 
-### Export Data
+### Export Data to Database
 
-After creating the two tables, I will export them in `.csv` format. I will then get on pgadmin4 and import the `.csv`'s into the database.
+```{r warning=FALSE, message=FALSE}
+library(DBI)
+library(RPostgres)
+library(dplyr)
+```
 
 ```{r eval=FALSE}
-write_csv(df1, "tweet_data.csv", col_names = FALSE)
-write_csv(df2, "tweet_text.csv", col_names = FALSE)
+# establish connection with postgres data base
+con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
+      host = 'localhost',
+      port = 5432,
+      user = 'postgres',
+      password = 'vannah') 
+```
+
+```{r eval=FALSE}
+dbWriteTable(con, "rldata", df1, append = TRUE)
+dbWriteTable(con, "rltext", df2, append = TRUE)
 ```
 
 ## **Pokémon Go Tweets**
@@ -59,9 +72,16 @@ pdf2 <- pdf %>%
   select(id_str, full_text, display_text_range, text)
 ```
 
-### Export Data
+### Export Data to Database
 
 ```{r eval=FALSE}
-write_csv(pdf1, "pogo_tweet_data.csv", col_names = FALSE)
-write_csv(pdf2, "pogo_tweet_text.csv", col_names = FALSE)
+dbWriteTable(con, "pogodata", pdf1, append = TRUE)
+dbWriteTable(con, "pogotext", pdf2, append = TRUE)
+```
+
+### Disconnect
+
+```{r eval=FALSE}
+# disconnect from database
+dbDisconnect(con)
 ```
