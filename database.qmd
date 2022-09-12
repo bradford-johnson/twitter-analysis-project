@@ -1,8 +1,4 @@
----
-title: "Connecting to the Database"
----
-
-## Connect to Database for Queries
+## **Connect to Database for Queries**
 
 First I loaded the `DBI`, `RPostgres`, and `dplyr` packages which will allow me to connect to the database and query it.
 

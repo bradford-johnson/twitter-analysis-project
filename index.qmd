@@ -1,8 +1,4 @@
----
-title: "Twitter Analysis Project"
----
-
-# Home
+# **Home**
 
 Use the navigation bar at the top to explore this project.
 

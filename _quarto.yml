@@ -7,7 +7,6 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Home
       - tweet_scrape.qmd
       - database.qmd
 
