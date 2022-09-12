@@ -2,4 +2,16 @@
 title: "Twitter Analysis Project"
 ---
 
-Work in progress...
+# Home
+
+Use the navigation bar at the top to explore this project.
+
+## My Links
+
+[**GitHub Profile Link**](https://github.com/bradfordjohnson)
+
+[**Project Repository Link**](https://github.com/bradfordjohnson/r-cookbook)
+
+## More about Quarto
+
+To learn more about Quarto books visit <https://quarto.org/docs/books>.

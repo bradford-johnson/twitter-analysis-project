@@ -1,0 +1,53 @@
+---
+title: "Connecting to the Database"
+---
+## Connect to Database for Queries
+
+Load packages
+
+```{r warning=FALSE, message=FALSE}
+library(DBI)
+library(RPostgres)
+library(dplyr)
+```
+
+Database information
+
+```{r}
+# establish connection with postgres data base
+con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
+      host = 'localhost',
+      port = 5432,
+      user = 'postgres',
+      password = 'vannah') 
+
+```
+
+Make query
+
+```{r}
+res <- dbSendQuery(con, "
+                   SELECT *
+                   FROM tweetdata AS t1
+                   LEFT JOIN tweettext AS t2
+                   ON t1.id_str = t2.id_str
+                   LIMIT 100;")
+
+```
+
+Execute query
+
+```{r}
+# execute query
+df <- dbFetch(res)
+```
+
+Clear query and disconnect from database
+
+```{r}
+# clear query
+dbClearResult(res)
+
+# disconnect from database
+dbDisconnect(con)
+```

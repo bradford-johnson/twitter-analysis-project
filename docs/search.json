@@ -2,22 +2,36 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Connecting to the Database",
     "section": "",
-    "text": "Work in progress…"
+    "text": "Load packages\n\nlibrary(DBI)\nlibrary(RPostgres)\nlibrary(dplyr)\n\nDatabase information\n\n# establish connection with postgres data base\ncon <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',\n      host = 'localhost',\n      port = 5432,\n      user = 'postgres',\n      password = 'vannah') \n\nMake query\n\nres <- dbSendQuery(con, \"\n                   SELECT *\n                   FROM tweetdata AS t1\n                   LEFT JOIN tweettext AS t2\n                   ON t1.id_str = t2.id_str\n                   LIMIT 100;\")\n\nExecute query\n\n# execute query\ndf <- dbFetch(res)\n\nClear query and disconnect from database\n\n# clear query\ndbClearResult(res)\n\n# disconnect from database\ndbDisconnect(con)"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Twitter Analysis Project",
     "section": "",
-    "text": "Work in progress…"
+    "text": "Use the navigation bar at the top to explore this project.\n\n\nGitHub Profile Link\nProject Repository Link\n\n\n\nTo learn more about Quarto books visit https://quarto.org/docs/books."
   },
   {
     "objectID": "rocket_league.html",
     "href": "rocket_league.html",
     "title": "Twitter Analysis Project",
     "section": "",
-    "text": "Load libraries\n\nlibrary(tidyverse)\nlibrary(rtweet)\n\nAuthenticate Twitter account\n\nauth_setup_default()\nauth_has_default()\n\n[1] TRUE\n\n\nSearch tweets 1000 per execution\n\ndf <- search_tweets(\"rocket league\", n = 1000, include_rts = FALSE, lang = \"en\")\n\n\n\n\nSelect and divide columns\n\ndf1 <- df %>%\n  select(id_str, retweet_count, favorite_count,  created_at)\n\ndf2 <- df %>%\n  select(id_str, full_text, display_text_range, text)\n\nExport as .csv\n\nwrite_csv(df1, \"tweet_data.csv\", col_names = FALSE)\nwrite_csv(df2, \"tweet_text.csv\", col_names = FALSE)\n\nData all put into postgreSQL database"
+    "text": "Load libraries\n\nlibrary(tidyverse)\nlibrary(rtweet)\n\nAuthenticate Twitter account\n\nauth_setup_default()\nauth_has_default()\n\n[1] TRUE\n\n\nSearch tweets 1000 per execution\n\ndf <- search_tweets(\"rocket league\", n = 1000, include_rts = FALSE, lang = \"en\")\n\n\n\n\nSelect and divide columns\n\ndf1 <- df %>%\n  select(id_str, retweet_count, favorite_count,  created_at)\n\ndf2 <- df %>%\n  select(id_str, full_text, display_text_range, text)\n\nExport as .csv\n\nwrite_csv(df1, \"tweet_data.csv\", col_names = FALSE)\nwrite_csv(df2, \"tweet_text.csv\", col_names = FALSE)\n\nAll data then put into postgreSQL database\n\n\n\nLoad packages\n\nlibrary(DBI)\nlibrary(RPostgres)\nlibrary(dplyr)\n\nDatabase information\n\n# establish connection with postgres data base\ncon <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',\n      host = 'localhost',\n      port = 5432,\n      user = 'postgres',\n      password = 'vannah') \n\nMake query\n\nres <- dbSendQuery(con, \"\n                   SELECT *\n                   FROM tweetdata AS t1\n                   LEFT JOIN tweettext AS t2\n                   ON t1.id_str = t2.id_str\n                   LIMIT 100;\")\n\nExecute query\n\n# execute query\ndf <- dbFetch(res)\n\nClear query and disconnect from database\n\n# clear query\ndbClearResult(res)\n\n# disconnect from database\ndbDisconnect(con)"
+  },
+  {
+    "objectID": "tweet_scrape.html",
+    "href": "tweet_scrape.html",
+    "title": "Twitter Analysis Project",
+    "section": "",
+    "text": "In order to get the Tweets I will first need to load the packages tidyverse and rtweet.\n\nlibrary(tidyverse)\nlibrary(rtweet)\n\nNext I can authenticate my Twitter developer account.\n\nauth_setup_default()\nauth_has_default()\n\n[1] TRUE\n\n\nFinally I will then search and scrape tweets that contain ‘rocket league’, I am doing 1000 Tweets at a time, that do not include Retweets and are in English.\n\ndf <- search_tweets(\"rocket league\", n = 1000, include_rts = FALSE, lang = \"en\")\n\n\n\nNow I will clean up the dataset into two more manageable tables that will be imported in into my postgreSQL database.\n\ndf1 <- df %>%\n  select(id_str, retweet_count, favorite_count,  created_at)\n\ndf2 <- df %>%\n  select(id_str, full_text, display_text_range, text)\n\nAfter creating the two tables, I will export them in .csv format. I will then get on pgadmin4 and import the .csv into the database.\n\nwrite_csv(df1, \"tweet_data.csv\", col_names = FALSE)\nwrite_csv(df2, \"tweet_text.csv\", col_names = FALSE)"
+  },
+  {
+    "objectID": "database.html",
+    "href": "database.html",
+    "title": "Connecting to the Database",
+    "section": "",
+    "text": "Load packages\n\nlibrary(DBI)\nlibrary(RPostgres)\nlibrary(dplyr)\n\nDatabase information\n\n# establish connection with postgres data base\ncon <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',\n      host = 'localhost',\n      port = 5432,\n      user = 'postgres',\n      password = 'vannah') \n\nMake query\n\nres <- dbSendQuery(con, \"\n                   SELECT *\n                   FROM tweetdata AS t1\n                   LEFT JOIN tweettext AS t2\n                   ON t1.id_str = t2.id_str\n                   LIMIT 100;\")\n\nExecute query\n\n# execute query\ndf <- dbFetch(res)\n\nClear query and disconnect from database\n\n# clear query\ndbClearResult(res)\n\n# disconnect from database\ndbDisconnect(con)"
   }
 ]
