@@ -22,7 +22,7 @@ Finally I will then search and scrape tweets that contain 'rocket league', I am 
 df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
 ```
 
-### Divide Tweets Data
+### Divide Tweets 
 
 Now I will clean up the dataset into two more manageable tables that will be imported into my `postgreSQL` database.
 
@@ -34,22 +34,23 @@ df2 <- df %>%
   select(id_str, full_text, display_text_range, text)
 ```
 
-### Export Data to Database
+### Connect to Database
 
-```{r warning=FALSE, message=FALSE}
+```{r eval=FALSE,warning=FALSE, message=FALSE}
+# packages for database connection
 library(DBI)
 library(RPostgres)
 library(dplyr)
-```
 
-```{r eval=FALSE}
-# establish connection with postgres data base
+# establish connection with postgres database
 con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
       host = 'localhost',
       port = 5432,
       user = 'postgres',
       password = 'vannah') 
 ```
+
+### Export Data to Database
 
 ```{r eval=FALSE}
 dbWriteTable(con, "rldata", df1, append = TRUE)
@@ -62,7 +63,7 @@ dbWriteTable(con, "rltext", df2, append = TRUE)
 pdf <- search_tweets("pokemon go", n = 1000, include_rts = FALSE, lang = "en")
 ```
 
-### Divide and Export Tweets Data
+### Divide Tweets
 
 ```{r eval=FALSE}
 pdf1 <- pdf %>%
@@ -79,7 +80,7 @@ dbWriteTable(con, "pogodata", pdf1, append = TRUE)
 dbWriteTable(con, "pogotext", pdf2, append = TRUE)
 ```
 
-### Disconnect
+### Disconnect from Database
 
 ```{r eval=FALSE}
 # disconnect from database
