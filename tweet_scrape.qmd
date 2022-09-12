@@ -24,7 +24,7 @@ df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
 
 ### Divide Tweets Data
 
-Now I will clean up the dataset into two more manageable tables that will be imported in into my `postgreSQL` database.
+Now I will clean up the dataset into two more manageable tables that will be imported into my `postgreSQL` database.
 
 ```{r eval=FALSE}
 df1 <- df %>%

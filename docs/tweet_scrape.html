@@ -204,7 +204,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <section id="divide-tweets-data" class="level3">
 <h3 class="anchored" data-anchor-id="divide-tweets-data">Divide Tweets Data</h3>
-<p>Now I will clean up the dataset into two more manageable tables that will be imported in into my <code>postgreSQL</code> database.</p>
+<p>Now I will clean up the dataset into two more manageable tables that will be imported into my <code>postgreSQL</code> database.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df1 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(id_str, retweet_count, favorite_count,  created_at)</span>
