@@ -142,7 +142,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="./tweet_scrape.html"><strong>Tweet Scrape</strong></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./database.html" aria-current="page"><strong>Connect to Database for Queries</strong></a>
+    <a class="nav-link active" href="./database.html" aria-current="page"><strong>Database Connection</strong></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -159,7 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#connect-to-database-for-queries" id="toc-connect-to-database-for-queries" class="nav-link active" data-scroll-target="#connect-to-database-for-queries"><strong>Connect to Database for Queries</strong></a></li>
+  <li><a href="#database-connection" id="toc-database-connection" class="nav-link active" data-scroll-target="#database-connection"><strong>Database Connection</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -168,8 +168,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 
 
-<section id="connect-to-database-for-queries" class="level2">
-<h2 class="anchored" data-anchor-id="connect-to-database-for-queries"><strong>Connect to Database for Queries</strong></h2>
+<section id="database-connection" class="level2">
+<h2 class="anchored" data-anchor-id="database-connection"><strong>Database Connection</strong></h2>
 <p>First I loaded the <code>DBI</code>, <code>RPostgres</code>, and <code>dplyr</code> packages which will allow me to connect to the database and query it.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(DBI)</span>
@@ -197,7 +197,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>And the execute the query.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># execute query</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">dbFetch</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>q_df <span class="ot">&lt;-</span> <span class="fu">dbFetch</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>After I am done with using the database I will clear out the query and disconnect from the database in order so save resources.</p>
 <div class="cell">

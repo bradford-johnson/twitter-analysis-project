@@ -1,4 +1,4 @@
-## **Connect to Database for Queries**
+## **Database Connection**
 
 First I loaded the `DBI`, `RPostgres`, and `dplyr` packages which will allow me to connect to the database and query it.
 
@@ -36,7 +36,7 @@ And the execute the query.
 
 ```{r}
 # execute query
-df <- dbFetch(res)
+q_df <- dbFetch(res)
 ```
 
 After I am done with using the database I will clear out the query and disconnect from the database in order so save resources.
