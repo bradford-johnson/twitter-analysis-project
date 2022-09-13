@@ -15,6 +15,9 @@
 > > B. Word correlations  
 > > C. Create visualizations as the deliverable and a "discussion"  
 
+## Flowchart of processes
+![](flowchart.png)
+
 ## Data 
 
 > **The data I want to collect**
