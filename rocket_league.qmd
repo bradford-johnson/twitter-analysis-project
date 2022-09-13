@@ -1,0 +1,45 @@
+# Rocket League Tweets
+
+```{r warning=FALSE, message=FALSE}
+library(tidyverse)
+library(rtweet)
+
+auth_setup_default()
+auth_has_default()
+```
+
+```{r eval=FALSE}
+df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
+```
+
+```{r eval=FALSE}
+# data
+df1 <- df %>%
+  select(id_str, retweet_count, favorite_count,  created_at)
+
+# text
+df2 <- df %>%
+  select(id_str, full_text, display_text_range, text)
+```
+
+```{r eval=FALSE,warning=FALSE, message=FALSE}
+library(DBI)
+library(RPostgres)
+library(dplyr)
+
+con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
+      host = 'localhost',
+      port = 5432,
+      user = 'postgres',
+      password = 'vannah') 
+```
+
+```{r eval=FALSE}
+dbWriteTable(con, "rocketleague_data", df1, append = TRUE)
+dbWriteTable(con, "rocketleague_text", df2, append = TRUE)
+```
+
+```{r eval=FALSE}
+# disconnect from database
+dbDisconnect(con)
+```

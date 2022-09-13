@@ -18,7 +18,7 @@
     "href": "rocket_league.html",
     "title": "Twitter Analysis Project",
     "section": "",
-    "text": "Load libraries\n\nlibrary(tidyverse)\nlibrary(rtweet)\n\nAuthenticate Twitter account\n\nauth_setup_default()\nauth_has_default()\n\n[1] TRUE\n\n\nSearch tweets 1000 per execution\n\ndf <- search_tweets(\"rocket league\", n = 1000, include_rts = FALSE, lang = \"en\")\n\n\n\n\nSelect and divide columns\n\ndf1 <- df %>%\n  select(id_str, retweet_count, favorite_count,  created_at)\n\ndf2 <- df %>%\n  select(id_str, full_text, display_text_range, text)\n\nExport as .csv\n\nwrite_csv(df1, \"tweet_data.csv\", col_names = FALSE)\nwrite_csv(df2, \"tweet_text.csv\", col_names = FALSE)\n\nAll data then put into postgreSQL database\n\n\n\nLoad packages\n\nlibrary(DBI)\nlibrary(RPostgres)\nlibrary(dplyr)\n\nDatabase information\n\n# establish connection with postgres data base\ncon <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',\n      host = 'localhost',\n      port = 5432,\n      user = 'postgres',\n      password = 'vannah') \n\nMake query\n\nres <- dbSendQuery(con, \"\n                   SELECT *\n                   FROM tweetdata AS t1\n                   LEFT JOIN tweettext AS t2\n                   ON t1.id_str = t2.id_str\n                   LIMIT 100;\")\n\nExecute query\n\n# execute query\ndf <- dbFetch(res)\n\nClear query and disconnect from database\n\n# clear query\ndbClearResult(res)\n\n# disconnect from database\ndbDisconnect(con)"
+    "text": "library(tidyverse)\nlibrary(rtweet)\n\nauth_setup_default()\nauth_has_default()\n\n[1] TRUE\n\n\n\ndf <- search_tweets(\"rocket league\", n = 1000, include_rts = FALSE, lang = \"en\")\n\n\n# data\ndf1 <- df %>%\n  select(id_str, retweet_count, favorite_count,  created_at)\n\n# text\ndf2 <- df %>%\n  select(id_str, full_text, display_text_range, text)\n\n\nlibrary(DBI)\nlibrary(RPostgres)\nlibrary(dplyr)\n\ncon <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',\n      host = 'localhost',\n      port = 5432,\n      user = 'postgres',\n      password = 'vannah') \n\n\ndbWriteTable(con, \"rocketleague_data\", df1, append = TRUE)\ndbWriteTable(con, \"rocketleague_text\", df2, append = TRUE)\n\n\n# disconnect from database\ndbDisconnect(con)"
   },
   {
     "objectID": "tweet_scrape.html",
@@ -33,5 +33,12 @@
     "title": "Twitter Analysis Project",
     "section": "",
     "text": "First I loaded the DBI, RPostgres, and dplyr packages which will allow me to connect to the database and query it.\n\nlibrary(DBI)\nlibrary(RPostgres)\nlibrary(dplyr)\n\nNext I will set the parameters to connect to my local database.\n\n# establish connection with postgres data base\ncon <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',\n      host = 'localhost',\n      port = 5432,\n      user = 'postgres',\n      password = 'vannah') \n\nOnce connected I can construct a query.\n\nres <- dbSendQuery(con, \"\n                   SELECT *\n                   FROM pogodata\n                   LIMIT 100;\")\n\nAnd the execute the query.\n\n# execute query\nq_df <- dbFetch(res)\n\nAfter I am done with using the database I will clear out the query and disconnect from the database in order so save resources.\n\n# clear query\ndbClearResult(res)\n\n# disconnect from database\ndbDisconnect(con)"
+  },
+  {
+    "objectID": "pogo.html",
+    "href": "pogo.html",
+    "title": "Twitter Analysis Project",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(rtweet)\n\nauth_setup_default()\nauth_has_default()\n\n[1] TRUE\n\n\n\npdf <- search_tweets(\"pokemon go\", n = 1000, include_rts = FALSE, lang = \"en\")\n\n\n# data\npdf1 <- pdf %>%\n  select(id_str, retweet_count, favorite_count,  created_at)\n\n#text\npdf2 <- pdf %>%\n  select(id_str, full_text, display_text_range, text)\n\n\nlibrary(DBI)\nlibrary(RPostgres)\nlibrary(dplyr)\n\ncon <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',\n      host = 'localhost',\n      port = 5432,\n      user = 'postgres',\n      password = 'vannah')\n\n\ndbWriteTable(con, \"pogo_data\", pdf1, append = TRUE)\ndbWriteTable(con, \"pogo_text\", pdf2, append = TRUE)\n\n\n# disconnect from database\ndbDisconnect(con)"
   }
 ]

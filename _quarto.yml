@@ -7,8 +7,8 @@ website:
   navbar:
     left:
       - href: index.qmd
-      - tweet_scrape.qmd
-      - database.qmd
+      - rocket_league.qmd
+      - pogo.qmd
 
 format:
   html:
