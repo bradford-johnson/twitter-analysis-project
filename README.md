@@ -15,7 +15,7 @@
 > > B. Word correlations  
 > > C. Create visualizations as the deliverable and a "discussion"  
 
-## Flowchart of processes
+## Project Flowchart
 ![](flowchart.png)
 
 ## Data 
