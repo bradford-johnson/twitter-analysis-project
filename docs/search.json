@@ -61,5 +61,12 @@
     "title": "Twitter Analysis Project",
     "section": "More about Quarto",
     "text": "More about Quarto\nTo learn more about Quarto books visit https://quarto.org/docs/books."
+  },
+  {
+    "objectID": "rstats.html",
+    "href": "rstats.html",
+    "title": "Twitter Analysis Project",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(rtweet)\n\nauth_setup_default()\nauth_has_default()\n\n[1] TRUE\n\n\n\nrdf <- search_tweets(\"#rstats\", n = 1000, include_rts = FALSE, lang = \"en\")\n\n\n# data\nrdf1 <- rdf %>%\n  select(id_str, retweet_count, favorite_count,  created_at)\n\n# text\nrdf2 <- rdf %>%\n  select(id_str, full_text, display_text_range, text)\n\n\nlibrary(DBI)\nlibrary(RPostgres)\nlibrary(dplyr)\n\ncon <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',\n      host = 'localhost',\n      port = 5432,\n      user = 'postgres',\n      password = 'vannah') \n\n\ndbWriteTable(con, \"rstats_data\", rdf1, append = TRUE)\ndbWriteTable(con, \"rstats_text\", rdf2, append = TRUE)\n\n\n# disconnect from database\ndbDisconnect(con)"
   }
 ]
