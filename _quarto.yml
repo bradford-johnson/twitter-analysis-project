@@ -10,6 +10,7 @@ website:
       - rocket_league.qmd
       - pogo.qmd
       - rstats.qmd
+      - topgolf.qmd
 
 format:
   html:

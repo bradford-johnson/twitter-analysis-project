@@ -1,0 +1,45 @@
+# TopGolf Tweets
+
+```{r warning=FALSE, message=FALSE}
+library(tidyverse)
+library(rtweet)
+
+auth_setup_default()
+auth_has_default()
+```
+
+```{r eval=FALSE}
+tgdf <- search_tweets("topgolf", n = 1000, include_rts = FALSE, lang = "en")
+```
+
+```{r eval=FALSE}
+# data
+tgdf1 <- tgdf %>%
+  select(id_str, retweet_count, favorite_count,  created_at)
+
+#text
+tgdf2 <- tgdf %>%
+  select(id_str, full_text, display_text_range, text)
+```
+
+```{r eval=FALSE,warning=FALSE, message=FALSE}
+library(DBI)
+library(RPostgres)
+library(dplyr)
+
+con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
+      host = 'localhost',
+      port = 5432,
+      user = 'postgres',
+      password = 'vannah')
+```
+
+```{r eval=FALSE}
+dbWriteTable(con, "tg_data", tgdf1, append = TRUE)
+dbWriteTable(con, "tg_text", tgdf2, append = TRUE)
+```
+
+```{r eval=FALSE}
+# disconnect from database
+dbDisconnect(con)
+```
