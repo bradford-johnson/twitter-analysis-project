@@ -6,9 +6,10 @@ website:
   title: "Twitter Analysis Project"
   navbar:
     left:
-      - href: index.qmd
+      
       - rocket_league.qmd
       - pogo.qmd
+      - rstats.qmd
 
 format:
   html:
