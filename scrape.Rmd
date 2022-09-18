@@ -1,45 +1,151 @@
-# Pokémon Go Tweets
-
-```{r warning=FALSE, message=FALSE}
-library(tidyverse)
-library(rtweet)
-
-auth_setup_default()
-auth_has_default()
-```
-
-```{r eval=FALSE}
-pdf <- search_tweets("pokemon go", n = 1000, include_rts = FALSE, lang = "en")
-```
-
-```{r eval=FALSE}
-# data
-pdf1 <- pdf %>%
-  select(id_str, retweet_count, favorite_count,  created_at)
-
-#text
-pdf2 <- pdf %>%
-  select(id_str, full_text, display_text_range, text)
-```
+# Rocket League Tweets
 
 ```{r eval=FALSE,warning=FALSE, message=FALSE}
+# load packages
+library(tidyverse)
+library(rtweet)
 library(DBI)
 library(RPostgres)
 library(dplyr)
 
+auth_setup_default()
+auth_has_default()
+
+df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
+
+# data
+df1 <- df %>%
+  select(id_str, retweet_count, favorite_count,  created_at)
+
+# text
+df2 <- df %>%
+  select(id_str, full_text, display_text_range, text)
+
+# connect to database
 con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
       host = 'localhost',
       port = 5432,
       user = 'postgres',
       password = 'vannah')
+
+# create tables in database
+dbWriteTable(con, "rocketleague_data", df1, append = TRUE)
+dbWriteTable(con, "rocketleague_text", df2, append = TRUE)
+
+# disconnect from database
+dbDisconnect(con)
 ```
 
-```{r eval=FALSE}
+# Pokémon Go Tweets
+
+```{r eval=FALSE,warning=FALSE, message=FALSE}
+# load packages
+library(tidyverse)
+library(rtweet)
+library(DBI)
+library(RPostgres)
+library(dplyr)
+
+auth_setup_default()
+auth_has_default()
+
+pdf <- search_tweets("pokemon go", n = 1000, include_rts = FALSE, lang = "en")
+
+# data
+pdf1 <- pdf %>%
+  select(id_str, retweet_count, favorite_count,  created_at)
+
+# text
+pdf2 <- pdf %>%
+  select(id_str, full_text, display_text_range, text)
+
+# connect to database
+con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
+      host = 'localhost',
+      port = 5432,
+      user = 'postgres',
+      password = 'vannah')
+
+# create tables in database
 dbWriteTable(con, "pogo_data", pdf1, append = TRUE)
 dbWriteTable(con, "pogo_text", pdf2, append = TRUE)
+
+# disconnect from database
+dbDisconnect(con)
 ```
 
-```{r eval=FALSE}
+## `#rstats tweets`
+
+```{r eval=FALSE,warning=FALSE, message=FALSE}
+# load packages
+library(tidyverse)
+library(rtweet)
+library(DBI)
+library(RPostgres)
+library(dplyr)
+
+auth_setup_default()
+auth_has_default()
+
+rdf <- search_tweets("#rstats", n = 1000, include_rts = FALSE, lang = "en")
+
+# data
+rdf1 <- rdf %>%
+  select(id_str, retweet_count, favorite_count,  created_at)
+
+# text
+rdf2 <- rdf %>%
+  select(id_str, full_text, display_text_range, text)
+
+# connect to database
+con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
+      host = 'localhost',
+      port = 5432,
+      user = 'postgres',
+      password = 'vannah')
+
+# create tables in database
+dbWriteTable(con, "rstats_data", rdf1, append = TRUE)
+dbWriteTable(con, "rstats_text", rdf2, append = TRUE)
+
+# disconnect from database
+dbDisconnect(con)
+```
+
+## TopGolf Tweets
+
+```{r eval=FALSE,warning=FALSE, message=FALSE}
+# load packages
+library(tidyverse)
+library(rtweet)
+library(DBI)
+library(RPostgres)
+library(dplyr)
+
+auth_setup_default()
+auth_has_default()
+
+tgdf <- search_tweets("topgolf", n = 1000, include_rts = FALSE, lang = "en")
+
+# data
+tgdf1 <- tgdf %>%
+  select(id_str, retweet_count, favorite_count,  created_at)
+
+# text
+tgdf2 <- tgdf %>%
+  select(id_str, full_text, display_text_range, text)
+
+# connect to database
+con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
+      host = 'localhost',
+      port = 5432,
+      user = 'postgres',
+      password = 'vannah')
+
+# create tables in database
+dbWriteTable(con, "tg_data", tgdf1, append = TRUE)
+dbWriteTable(con, "tg_text", tgdf2, append = TRUE)
+
 # disconnect from database
 dbDisconnect(con)
 ```
