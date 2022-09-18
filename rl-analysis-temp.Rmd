@@ -42,7 +42,7 @@ bing <- get_sentiments(lexicon = "bing")
 
 db_bing <- inner_join(db_new, bing, by = "word")
 
-db_bing <- count(db_bing, id_str, retweet_count, favorite_count, word, sentiment)
+db_bing <- count(db_bing, id_str, display_text_range, retweet_count, favorite_count, word, sentiment)
 
 db_bing <- spread(key = sentiment, value = n, fill = 0, data = db_bing)
 
@@ -52,7 +52,7 @@ db_bing <- mutate(sentiment = positive - negative, .data = db_bing)
 mean(db_bing$sentiment, na.rm = TRUE)
 ```
 
-```{r analyze and visualize sentiment}
+```{r analyze and visualize sentiment, warning=FALSE}
 #----  ----#
 library(RColorBrewer)
 fun_color_range <- colorRampPalette(c("red", "green"))
@@ -64,16 +64,18 @@ db_sentiment <- db_bing %>%
                            sentiment < 0 ~ 'negative')) %>%
   filter(value == 'positive' | value == 'negative')
 
-db_sentiment %>%
-  arrange(desc(favorite_count),desc(retweet_count)) %>%
+rl_sentiment <- db_sentiment %>%
   group_by(id_str) %>%
-  summarise(id_str, sentiment = sum(sentiment), favorite_count = mean(favorite_count), retweet_count = mean(retweet_count)) %>% 
-  ggplot(mapping = aes(x = id_str, y = sentiment, color = sentiment)) +
-  geom_col(alpha = .6) + 
+  summarise( display_text_range = mean(display_text_range), Sentiment = sum(sentiment)) %>% 
+  filter(display_text_range < 280) %>%
+  ggplot(mapping = aes(x = display_text_range, y = Sentiment, color = Sentiment)) +
+  geom_jitter(alpha = .5) + 
   scale_colour_gradientn(colors = my_colors2) +
+  geom_hline(linetype = 1, yintercept = 0, size = .5) +
+  geom_vline(linetype = 1, xintercept = 140, size = .5) +
   theme_classic() +
-  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank()) + 
-  labs(title = "Rocket League Tweet Sentiment", x = "Tweet", y = "Sentiment")
+  theme() + 
+  labs(title = "Rocket League Tweet Sentiment", x = "Number of Characters", y = "Sentiment")
 ```
 
 ```{r analyze correlation}
@@ -90,7 +92,7 @@ tweet_words <- query_df %>%
   distinct()
 
 #---- remove non-words ----#
-word <- c('https','t.co')
+word <- c('https','t.co', 'ttv', 'bcluhhk8eu')
 extra2 <- data.frame(word)
 
 tweet_words <- tweet_words %>%
@@ -99,16 +101,16 @@ tweet_words <- tweet_words %>%
 #---- first visual ----#
 tweets_that_mention_word <- tweet_words %>% 
   count(word, name = "number_of_tweets") %>% 
-  filter(number_of_tweets >= 20)
+  filter(number_of_tweets >= 7)
 
 
 tweet_correlations <- tweet_words %>% 
   semi_join(tweets_that_mention_word, by = "word") %>% 
   pairwise_cor(item = word, feature = id_str) %>% 
-  filter(correlation >= 0.2) 
+  filter(correlation >= 0.7) 
 
 
-graph_from_data_frame(d = tweet_correlations,
+rl_correlations <- graph_from_data_frame(d = tweet_correlations,
                       vertices = tweets_that_mention_word %>%
                         semi_join(tweet_correlations, by = c("word" = "item1"))) %>%
   ggraph(layout = "fr") +
