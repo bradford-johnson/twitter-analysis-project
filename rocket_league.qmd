@@ -76,12 +76,12 @@ rl_sentiment <- db_sentiment %>%
   summarise( display_text_range = mean(display_text_range), Sentiment = sum(sentiment)) %>% 
   filter(display_text_range < 280) %>%
   ggplot(mapping = aes(x = display_text_range, y = Sentiment, color = Sentiment)) +
-  geom_jitter(alpha = .5) + 
+  geom_jitter(alpha = .7) + 
   scale_colour_gradientn(colors = my_colors2) +
   geom_hline(linetype = 1, yintercept = 0, size = .5) +
-  geom_vline(linetype = 1, xintercept = 140, size = .5) +
+  geom_vline(linetype = 3, xintercept = 140, size = .5) +
   theme_classic() +
-  theme() + 
+  theme(legend.position = "") + 
   labs(title = "Rocket League Tweet Sentiment", x = "Number of Characters", y = "Sentiment")
 rl_sentiment
 ```
