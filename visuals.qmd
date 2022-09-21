@@ -1,0 +1,19 @@
+# Visuals
+
+## Tweet Sentiment
+
+![](rlts.png)
+
+![](pogots.png)
+
+![](rstatsts.png)
+
+![](tgts.png)
+
+![](rlc.png)
+
+![](pogoc.png)
+
+![](rstatsc.png)
+
+![](tgc.png)
