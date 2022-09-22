@@ -68,5 +68,12 @@
     "title": "Twitter Analysis Project",
     "section": "",
     "text": "r_sentiment\n\n\n\n\n\n\n\n\nr_correlations"
+  },
+  {
+    "objectID": "patchwork.html",
+    "href": "patchwork.html",
+    "title": "Twitter Analysis Project",
+    "section": "",
+    "text": "library(patchwork)\nrl_sentiment + pg_sentiment + tg_sentiment + r_sentiment"
   }
 ]
