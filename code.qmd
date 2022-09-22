@@ -1,4 +1,4 @@
-# **[CODE]**
+# **Code**
 
 This is the `Code` that I used to do this analysis, this will be showing the code for the `Rocket League` topic, each topic's code was the same, but with small differences. To see all the code and files, check out my `GitHub Repository` [here](https://github.com/bradfordjohnson/twitter-analysis-project).
 
