@@ -1,6 +1,6 @@
 # **Twitter Analysis Project**
 
-![](https://img.shields.io/badge/%E2%8F%B3-Work%20in%20progress-red)
+![](https://img.shields.io/badge/%E2%9C%85-Complete-brightgreen)
 
 ## Objectives
 
@@ -17,9 +17,9 @@
 > B. Word correlations\
 > C. Create visualizations as the deliverable and a "discussion"
 
-## Process Flow Charts  
-![](data-collection.png)
-![](data-cleaning-analysis.png)
+## Process Flow Charts
+
+![](data-collection.png) ![](data-cleaning-analysis.png)
 
 ## My Links
 
