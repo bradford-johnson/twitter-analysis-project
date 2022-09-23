@@ -1,6 +1,6 @@
 # **Twitter Analysis Project**
 
-![](https://img.shields.io/badge/%E2%8F%B3-Work%20in%20progress-red)
+![Badge](https://img.shields.io/badge/%E2%9C%85-Complete-brightgreen)
 
 ## Objectives
 
