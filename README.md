@@ -10,3 +10,31 @@
 > |[<img src="journal-richtext.svg" width="54px">](https://bradfordjohnson.github.io/twitter-analysis-project/)|[<img src="github.svg" width="54px">](https://github.com/bradfordjohnson/twitter-analysis-project/blob/t/README.md)|
 
 ---
+## **❓ Research Question | Hypothesis | Problem** 
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty 
+## **💡 Inspiration**
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty 
+## **📊 The Data**
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty
+## **📐 Methods**
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+## **📈 Findings | Insights**
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+## **💬 Discussion**
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+## **📖 Resources | Citations**
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty 
