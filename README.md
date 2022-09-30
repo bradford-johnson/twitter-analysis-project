@@ -1,4 +1,4 @@
-# **Twitter Analysis Project |** `<toolbadge>` **+** `<toolbadge>`
+# **Twitter Analysis Project |** ![](https://ford-johnson.com/images/rstudiobadge.svg) **+** `<toolbadge>`
 > ### **Theme or General Name |** `<statusbadge>` `<--- include "|" and "<statusbadge>" if not done`
 > - bullet point
 > - bullet point
