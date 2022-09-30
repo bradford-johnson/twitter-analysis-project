@@ -6,7 +6,7 @@ website:
   title: "Twitter Analysis Project"
   navbar:
     left:
-      - patchwork.qmd
+      - index.qmd
       - wordpatchwork.qmd
       - code.qmd
 
