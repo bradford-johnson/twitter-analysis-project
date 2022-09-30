@@ -13,19 +13,20 @@
 ## **❓ Research Objectives** 
 > This project was a way to learn about and implement several new ways to use `R`.
 > 
-> > **I. Collect data (Tweets) from Twitter using R**  
-> > > A. Clean the data with R  
-> > > B. Store all the data in a postgreSQL database  
+> > **I. Collect data (Tweets) from Twitter using `R`**  
+> > > A. Clean the data with `R`  
+> > > B. Store all the data in a `postgreSQL` *database*  
 > > 
 > > **II. After a period of data collection, use R to connect to the database**  
-> > > A. Use SQL to query the database via R  
-> > > B. Store SQL query outputs as data frames for R analysis 
+> > > A. Use `SQL` to query the *database* via `R`  
+> > > B. Store `SQL` *query* outputs as data frames for `R` analysis 
 > >  
 > > **III. Investigate insights in the data**  
-> > > A. Sentiment analysis  
-> > > B. Word correlations  
-> > > C. Create visualizations as the deliverable and a “discussion”  
-> > 
+> > > A. **Sentiment analysis**  
+> > > B. **Word correlations**  
+> > > C. Create **visualizations** showing both the sentiment and correlations. 
+> >
+> With all of those objectives in mind, my deliverable for this analysis is a `Quarto` website made in `R`, hosted via `GitHub Pages`.
 ## **💡 Inspiration**
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
