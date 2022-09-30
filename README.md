@@ -7,6 +7,6 @@
 > *Click the icons below to see the project files and deliverables*
 > | Analysis | ReadMe |
 > | :-: | :-: |
-> |[<img src="journal-richtext.svg" width="54px">](https://bradfordjohnson.github.io/rblogr/)|[<img src="github.svg" width="54px">](https://github.com/bradfordjohnson/rblogr/blob/rblogr/README.md)|
+> |[<img src="journal-richtext.svg" width="54px">](https://bradfordjohnson.github.io/rblogr/)|[<img src="github.svg" width="54px">](https://github.com/bradfordjohnson/twitter-analysis-project/blob/t/README.md)|
 
 ---
