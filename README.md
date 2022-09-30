@@ -1,4 +1,4 @@
-# **Twitter Analysis Project |** ![](https://ford-johnson.com/images/rstudiobadge.svg) **+** `<toolbadge>`
+# **Twitter Analysis Project |** ![](https://ford-johnson.com/images/rstudiobadge.svg) **+** ![](https://ford-johnson.com/images/postgresql.svg) **+** <img src="https://ford-johnson.com/images/quarto.png" height="28px">
 > ### **Theme or General Name |** `<statusbadge>` `<--- include "|" and "<statusbadge>" if not done`
 > - bullet point
 > - bullet point
