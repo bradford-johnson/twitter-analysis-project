@@ -10,10 +10,22 @@
 > |[<img src="journal-richtext.svg" width="54px">](https://bradfordjohnson.github.io/twitter-analysis-project/)|[<img src="github.svg" width="54px">](https://github.com/bradfordjohnson/twitter-analysis-project/blob/t/README.md)|
 
 ---
-## **❓ Research Question | Hypothesis | Problem** 
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty 
+## **❓ Research Objectives** 
+> This project was a way to learn about and implement several new ways to use `R`.
+> 
+> > **I. Collect data (Tweets) from Twitter using R**  
+> > > A. Clean the data with R  
+> > > B. Store all the data in a postgreSQL database  
+> > 
+> > **II. After a period of data collection, use R to connect to the database**  
+> > > A. Use SQL to query the database via R  
+> > > B. Store SQL query outputs as data frames for R analysis 
+> >  
+> > **III. Investigate insights in the data**  
+> > > A. Sentiment analysis  
+> > > B. Word correlations  
+> > > C. Create visualizations as the deliverable and a “discussion”  
+> > 
 ## **💡 Inspiration**
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
