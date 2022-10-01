@@ -28,10 +28,8 @@
 > >
 > With all of those objectives in mind, my deliverable for this analysis is a `Quarto` website made in `R`, hosted via `GitHub Pages`.
 ## **💡 Inspiration**
-> Once I found the `rtweet` package I started developing an idea that turned into this project.  
-> I wanted to scrape Twitter data and use it to get more comfortable working with text data, I knew I wanted to do a **sentiment analysis** on the data but after some research I also wanted to look at implementing the **pairwise correlation**.  
-> While I was looking into the analysis I was also working on SQL and database tools, thus I wanted to figure out how to execute SQL queries on my data, once I found the `RPostgres` and `DBI` packages I figured I could do the following:
-> > 
+> I wanted to see what other people were saying about the same topics I am interested in, and I also wanted to see if others were saying more positive or negative things about each respective topic. Those topics being: **Rocket League**, **Pokémon Go**, **TopGolf**, and the hashtag "**#rstats**".  
+> I picked **Rocket League** and **Pokémon Go** because I enjoy playing these games. **TopGolf** because I am currently working there as an *IT Team Lead*, so I thought it would be interesting to see this topic as I am not very aware of the wider public perception of the player experience. “**#rstats**” I picked because I wanted to have one hashtag included in this topic group, and I have not yet investigated the hashtag in detail. This will let me see more about the Tweets with this hashtag, and the common themes that involve each other. 
 ## **📊 The Data**
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
