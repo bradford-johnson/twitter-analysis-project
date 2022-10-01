@@ -32,18 +32,23 @@
 > 
 > I picked **Rocket League** and **Pokémon Go** because I enjoy playing these games. **TopGolf** because I am currently working there as an *IT Team Lead*, so I thought it would be interesting to see this topic as I am not very aware of the wider public perception of the player experience. “**#rstats**” I picked because I wanted to have one hashtag included in this topic group, and I have not yet investigated the hashtag in detail. This will let me see more about the Tweets with this hashtag, and the **common themes** that are mentioned in "**rstats**". 
 ## **📊 The Data**
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> I used the `rtweet` package to get the **Tweet** data by using the **Twitter API**, to use this `API` you must have a Twitter Developer Account, and be logged in with your default browser, this let the `rtweet` package authenticate your account and run the `search_tweets()` function.  
+>  
+> These are the packages I used for *collecting data*
 ``` r
-# load packages
 library(tidyverse)
 library(rtweet)
 library(DBI)
 library(RPostgres)
 library(dplyr)
+```
+> Here is an example of the R code I used to get the **Rocket League** Tweets:   
+``` r
 auth_setup_default()
 auth_has_default()
+
 df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
+
 # data
 df1 <- df %>%
   select(id_str, retweet_count, favorite_count,  created_at)
@@ -63,9 +68,14 @@ dbWriteTable(con, "rocketleague_text", df2, append = TRUE)
 dbDisconnect(con)
 ```
 ## **📐 Methods**
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> All the packages used for *collecting data*
+``` r
+library(tidyverse)
+library(rtweet)
+library(DBI)
+library(RPostgres)
+library(dplyr)
+```
 ## **📈 Findings | Insights**
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
