@@ -34,7 +34,34 @@
 ## **📊 The Data**
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty
+``` r
+# load packages
+library(tidyverse)
+library(rtweet)
+library(DBI)
+library(RPostgres)
+library(dplyr)
+auth_setup_default()
+auth_has_default()
+df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
+# data
+df1 <- df %>%
+  select(id_str, retweet_count, favorite_count,  created_at)
+# text
+df2 <- df %>%
+  select(id_str, full_text, display_text_range, text)
+# connect to database
+con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
+      host = 'localhost',
+      port = 5432,
+      user = 'postgres',
+      password = 'vannah')
+# create tables in database
+dbWriteTable(con, "rocketleague_data", df1, append = TRUE)
+dbWriteTable(con, "rocketleague_text", df2, append = TRUE)
+# disconnect from database
+dbDisconnect(con)
+```
 ## **📐 Methods**
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
