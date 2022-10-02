@@ -75,7 +75,7 @@ dbDisconnect(con)
 > ![](data-collection.png)
 > Data cleaning and analysis flow chart
 > ![](data-cleaning-analysis.png)
-## **📈 Findings | Insights**
+## **📈 Findings**
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
