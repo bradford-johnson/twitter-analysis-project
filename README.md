@@ -71,14 +71,10 @@ dbWriteTable(con, "rocketleague_text", df2, append = TRUE)
 dbDisconnect(con)
 ```
 ## **📐 Methods**
-> All the packages used for *collecting data*
-``` r
-library(tidyverse)
-library(rtweet)
-library(DBI)
-library(RPostgres)
-library(dplyr)
-```
+> Collecting data flow chart 
+> ![](data-collection.png)
+> Data cleaning and analysis flow chart
+> ![](data-cleaning-analysis.png)
 ## **📈 Findings | Insights**
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
