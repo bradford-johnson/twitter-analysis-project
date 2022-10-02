@@ -49,7 +49,7 @@ auth_has_default()
 
 df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
 ```
-> Once I got the data from the Twitter **API**, I split the data into two data frames then **imported** them into my `SQL` database 
+> Once I got the data from the Twitter **API** I then split the data into two data frames
 ``` r
 # data data frame
 df1 <- df %>%
@@ -57,7 +57,9 @@ df1 <- df %>%
 # text data frame
 df2 <- df %>%
   select(id_str, full_text, display_text_range, text)
-  
+ ```
+ > Next I **imported** the data frames into my `SQL` database as tables  
+ ``` r
 # connect to database
 con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
       host = 'localhost',
@@ -70,6 +72,10 @@ dbWriteTable(con, "rocketleague_text", df2, append = TRUE)
 # disconnect from database
 dbDisconnect(con)
 ```
+> Running all this `code` once will get a maximum of **1,000 Tweets** and store every *Tweet* + *associated data* within 2 tables of my *SQL database*.  
+> Running the `code` again will add to the pre-existing tables in the database.
+> 
+> For each topic the `code` was ran a different number of times so there was a **variation** in the amount of data collected.
 ## **📐 Methods**
 > Collecting data flow chart 
 > ![](data-collection.png)
@@ -89,9 +95,7 @@ dbDisconnect(con)
 > ![](pogoc.png)
 > ![](tgc.png)
 > ![](rstatsc.png)
-## **💬 Discussion**
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+## **💬 Discussion and Thoughts**
+> As you can see the **sentiment trends** and **word correlations** vary between the topics, some of the **word correlation** charts tell a much better story than the others, so I plan on exploring how adjusting other **parameters** can impact the story this visual tells about a topic. I also want to create an even more effective visual for the Tweet sentiment, and try coming up with `KPIs` that can even better interpret the state of a topic's "*performance*".
 ## **📖 Resources | Citations**
 > [<img src="https://github.com/ropensci/rtweet/blob/master/man/figures/logo.png?raw=true" width="200px">](https://docs.ropensci.org/rtweet/)
