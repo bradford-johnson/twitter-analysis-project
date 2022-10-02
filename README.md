@@ -48,13 +48,16 @@ auth_setup_default()
 auth_has_default()
 
 df <- search_tweets("rocket league", n = 1000, include_rts = FALSE, lang = "en")
-
-# data
+```
+> Once I got the data from the Twitter **API**, I split the data into two data frames then **imported** them into my `SQL` database 
+``` r
+# data data frame
 df1 <- df %>%
   select(id_str, retweet_count, favorite_count,  created_at)
-# text
+# text data frame
 df2 <- df %>%
   select(id_str, full_text, display_text_range, text)
+  
 # connect to database
 con <- dbConnect(RPostgres::Postgres(),dbname = 'postgres',
       host = 'localhost',
