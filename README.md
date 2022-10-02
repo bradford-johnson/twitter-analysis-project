@@ -76,14 +76,22 @@ dbDisconnect(con)
 > Data cleaning and analysis flow chart
 > ![](data-cleaning-analysis.png)
 ## **📈 Findings**
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
+> **Tweet Sentiment**  
+>
+> ![](rlts.png)
+> ![](pogots.png)
+> ![](tgts.png)
+> ![](rstatsts.png)
+>
+> **Tweet Word Correlations**  
+>
+> ![](rlc.png)
+> ![](pogoc.png)
+> ![](tgc.png)
+> ![](rstatsc.png)
 ## **💬 Discussion**
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 > qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
 ## **📖 Resources | Citations**
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty  
-> qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty 
+> [<img src="https://github.com/ropensci/rtweet/blob/master/man/figures/logo.png?raw=true" width="200px">](https://docs.ropensci.org/rtweet/)
